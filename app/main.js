@@ -693,17 +693,19 @@ function toggleIncorrectLayoutWarning(show) {
 }
 
 function handleSpacebar(e) {
-  if (e.key === " ") {
-    togglePlayPause();
-    e.stopPropagation();
-    e.preventDefault();
-  }
+  togglePlayPause();
+  e.stopPropagation();
+  e.preventDefault();
 }
 
 // Handle keyboard events
 function handleKeyDown(e) {
   const key = e.key.toLowerCase();
-  handleSpacebar(e);
+
+  if (key === " ") {
+    return handleSpacebar(e);
+  }
+
   toggleIncorrectLayoutWarning(!isSupportedLetter(key));
 
   if (keyMappings.hasOwnProperty(key)) {
