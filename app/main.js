@@ -22,6 +22,9 @@ const playPauseBtn = document.getElementById("playPauseBtn");
 const currentTimeDisplay = document.getElementById("currentTimeDisplay");
 const totalTimeDisplay = document.getElementById("totalTimeDisplay");
 const playhead = document.getElementById("playhead");
+const clearSelectionsBtn = document.getElementById("clearSelectionsBtn");
+
+clearSelectionsBtn.addEventListener("click", clearSelections);
 
 playPauseBtn.addEventListener("click", togglePlayPause);
 
