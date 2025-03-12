@@ -219,3 +219,14 @@ button:disabled {
   margin: 20px 0;
   font-size: 14px;
 }
+
+.non-english-warning {
+  display: none;
+  background-color: #fff3e0;
+  border: 1px solid #b71c1c;
+  padding: 10px 15px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #b71c1c;
+  border-radius: 4px;
+}

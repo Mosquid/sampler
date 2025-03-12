@@ -429,6 +429,10 @@ function updateKeyBindings() {
   });
 }
 
+function isSupportedLetter(letter) {
+  return availableKeys.includes(letter);
+}
+
 // Play a slice
 function playSlice(index) {
   if (!audioBuffer || !audioContext) return;
@@ -678,9 +682,30 @@ function clearSelections() {
   keyBindings.innerHTML = "";
 }
 
+function toggleIncorrectLayoutWarning(show) {
+  const warning = document.getElementById("nonEnglishWarning");
+
+  if (show) {
+    warning.style.display = "block";
+  } else {
+    warning.style.display = "none";
+  }
+}
+
+function handleSpacebar(e) {
+  if (e.key === " ") {
+    togglePlayPause();
+    e.stopPropagation();
+    e.preventDefault();
+  }
+}
+
 // Handle keyboard events
 function handleKeyDown(e) {
   const key = e.key.toLowerCase();
+  handleSpacebar(e);
+  toggleIncorrectLayoutWarning(!isSupportedLetter(key));
+
   if (keyMappings.hasOwnProperty(key)) {
     const sliceIndex = keyMappings[key];
     playSlice(sliceIndex);
