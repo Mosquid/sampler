@@ -9,6 +9,27 @@
   <body>
     <div class="container">
       <h1>Audio Sampler</h1>
+      <div
+        class="star-cta"
+        style="
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          justify-content: flex-end;
+        "
+      >
+        Who would want to&nbsp;
+        <!-- Place this tag where you want the button to render. -->
+        <a
+          class="github-button"
+          href="https://github.com/mosquid/sampler/"
+          data-color-scheme="no-preference: light; light: light; dark: dark;"
+          data-icon="octicon-star"
+          data-size="large"
+          aria-label="Star buttons/github-buttons on GitHub"
+          >Star</a
+        >&nbsp;this on GitHub..?
+      </div>
       <div class="instructions">
         <p><strong>Instructions:</strong></p>
         <ol>
@@ -60,8 +81,11 @@
       </div>
 
       <div id="keyBindings" class="key-bindings"></div>
+      <!-- <button id="recordSample">Play and record</button> -->
     </div>
 
     <script src="./app/main.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
